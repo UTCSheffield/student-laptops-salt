@@ -1,4 +1,8 @@
-install_libtss2_mu_dummy:
+install_libtss2_mu:
+  pkg.installed:
+    - name: libtss2-mu-4.0.1-0
+
+install_libtss2_mu0_dummy:
   pkg.installed:
     - name: equivs
 
@@ -18,7 +22,8 @@ create_libtss2_mu0_control:
         Package: libtss2-mu0
         Version: 1.0
         Provides: libtss2-mu0
-        Depends: libtss2-mu-4.0.1-0
+        Conflicts:
+        Replaces:
         Architecture: all
         Description: Dummy package to satisfy himemlblau dependency
 
@@ -29,11 +34,12 @@ build_libtss2_mu0_dummy:
     - creates: /tmp/libtss2-mu0-dummy/libtss2-mu0_1.0_all.deb
     - require:
       - file: create_libtss2_mu0_control
-      - pkg: install_libtss2_mu_dummy
+      - pkg: install_libtss2_mu0_dummy
 
-install_libtss2_mu0_dummy:
+install_libtss2_mu0_dummy_deb:
   pkg.installed:
     - sources:
       - libtss2-mu0: /tmp/libtss2-mu0-dummy/libtss2-mu0_1.0_all.deb
     - require:
       - cmd: build_libtss2_mu0_dummy
+      - pkg: install_libtss2_mu
