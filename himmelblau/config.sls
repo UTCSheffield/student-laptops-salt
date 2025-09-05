@@ -1,12 +1,3 @@
-himmelblau-config:
-  file.managed:
-    - name: /etc/himmelblau/himmelblau.conf
-    - user: root
-    - group: root
-    - mode: "0644"
-    - require:
-      - pkg: himmelblau-packages
-
 /etc/himmelblau/himmelblau.conf:
   file.managed:
     - contents: |
@@ -22,3 +13,4 @@ himmelblau-config:
     - mode: '0644'
     - require:
       - pkg: himmelblau-packages
+    - makedirs: True
