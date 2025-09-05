@@ -17,3 +17,5 @@ himmelblau_key:
         | gpg --dearmor \
         | tee /usr/share/keyrings/himmelblau.gpg > /dev/null
     - creates: /usr/share/keyrings/himmelblau.gpg
+    - require:
+      - pkg: curl
