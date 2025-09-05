@@ -1,5 +1,5 @@
 include:
-  - himmelblau.libtss2_dummy
+  - himmelblau.libtss2_fix
   - himmelblau.repo
   - himmelblau.service
   - himmelblau.config
@@ -13,4 +13,4 @@ himmelblau-packages:
       - pam-himmelblau
     - require:
        - file: /etc/apt/sources.list.d/himmelblau.sources
-       - pkg: install_libtss2_mu0_dummy
+       - pkg: install_libtss2_mu0_dummy_deb
