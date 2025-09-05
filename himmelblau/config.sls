@@ -7,9 +7,8 @@ himmelblau-config:
     - require:
       - pkg: himmelblau-packages
 
-lightdm_config:
+/etc/himmelblau/himmelblau.conf:
   file.managed:
-    - name: /etc/lightdm/lightdm.conf.d/50-hide-users.conf
     - contents: |
         [global]
         domains = utcsheffield.org.uk
