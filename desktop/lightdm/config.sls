@@ -8,4 +8,6 @@ lightdm_config:
     - user: root
     - group: root
     - mode: '0644'
+    - require:
+      - pkg: lightdm
     - makedirs: True
