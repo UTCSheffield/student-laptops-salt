@@ -1,17 +1,19 @@
-pkgrepo.managed:
-    - humanname: Google Chrome
-    - name: deb http://deb.archiesbytes.xyz/himmelblau/ stable main
-    - dist: stable
-    - file: /etc/apt/sources.list.d/himmelblau.list
-    - require_in:
-      - pkg: himmelblau-packages
-    - gpgcheck: 1
-    - key_url: https://himmelblau-idm.org/himmelblau.asc
+/etc/apt/sources.list.d/himmelblau.sources:
+  file.managed:
+    - mode: "0644"
+    - user: root
+    - group: root
+    - contents: |
+        Types: deb
+        URIs: https://deb.archiesbytes.xyz/himmelblau
+        Suites: debian12
+        Components: main
+        Signed-By: /usr/share/keyrings/himmelblau.gpg
 
-himmelblau-packages:
-  pkg.installed:
-    - pkgs:
-      - himmelblau
-      - himmelblau-sso
-      - nss-himmelblau
-      - pam-himmelblau
+himmelblau_key:
+  cmd.run:
+    - name: |
+        curl -fsSL https://himmelblau-idm.org/himmelblau.asc \
+        | gpg --dearmor \
+        | tee /usr/share/keyrings/himmelblau.gpg > /dev/null
+    - creates: /usr/share/keyrings/himmelblau.gpg
