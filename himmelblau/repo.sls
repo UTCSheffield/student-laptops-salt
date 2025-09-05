@@ -6,7 +6,7 @@
     - contents: |
         Types: deb
         URIs: https://deb.archiesbytes.xyz/himmelblau-personal
-        Suites: debian12
+        Suites: debian13
         Components: main
         Signed-By: /usr/share/keyrings/himmelblau.gpg
 
