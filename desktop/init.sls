@@ -1,5 +1,5 @@
 include:
   - desktop.cinnamon
   - desktop.lightdm
-  - desktop.gnome-desktop.uninstall
+  - desktop.gnome.uninstall
   - desktop.gdm.uninstall
