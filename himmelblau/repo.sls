@@ -1,5 +1,6 @@
-/etc/apt/sources.list.d/himmelblau.sources:
+himmelblau_sources:
   file.managed:
+    - name: /etc/apt/sources.list.d/himmelblau.sources
     - mode: "0644"
     - user: root
     - group: root
@@ -9,6 +10,8 @@
         Suites: debian13
         Components: main
         Signed-By: /usr/share/keyrings/himmelblau.gpg
+    - require:
+      - cmd: himmelblau_key
 
 himmelblau_key:
   cmd.run:
@@ -19,3 +22,10 @@ himmelblau_key:
     - creates: /usr/share/keyrings/himmelblau.gpg
     - require:
       - pkg: curl
+
+apt_update_himmelblau:
+  cmd.run:
+    - name: apt update
+    - require:
+      - file: himmelblau_sources
+      - cmd: himmelblau_key
