@@ -10,5 +10,5 @@ himmelblau-packages:
       - himmelblau-sso
       - nss-himmelblau
       - pam-himmelblau
-     - require:
+    - require:
        - file: /etc/apt/sources.list.d/himmelblau.sources
