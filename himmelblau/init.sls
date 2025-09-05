@@ -13,3 +13,4 @@ himmelblau-packages:
       - pam-himmelblau
     - require:
        - file: /etc/apt/sources.list.d/himmelblau.sources
+       - pkg: install_libtss2_mu0_dummy
