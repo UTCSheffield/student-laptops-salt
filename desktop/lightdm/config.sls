@@ -8,3 +8,4 @@ lightdm_config:
     - user: root
     - group: root
     - mode: '0644'
+    - makedirs: True
