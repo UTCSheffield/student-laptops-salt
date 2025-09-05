@@ -1,4 +1,5 @@
 include:
+  - himmelblau.libtss2_dummy
   - himmelblau.repo
   - himmelblau.service
   - himmelblau.config
