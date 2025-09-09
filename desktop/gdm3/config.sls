@@ -10,7 +10,7 @@
       - pkg: gdm3
     - makedirs: True
 
-/etc/gdm3/daemon.conf:
+/etc/gdm3/custom.conf:
   file.managed:
     - contents: |
         [daemon]
@@ -25,7 +25,7 @@
 update-dconf-gdm:
   cmd.run:
     - name: dconf update
-    - onlyif: test -n "$(find /etc/gdm3/greeter.dconf-defaults /etc/gdm3/daemon.conf -mmin -2)"
+    - onlyif: test -n "$(find /etc/gdm3/greeter.dconf-defaults /etc/gdm3/custom.conf -mmin -2)"
     - require:
       - file: /etc/gdm3/greeter.dconf-defaults
-      - file: /etc/gdm3/daemon.conf
+      - file: /etc/gdm3/custom.conf
