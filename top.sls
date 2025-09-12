@@ -4,4 +4,3 @@ base:
     - desktop
     - apps.defaults
     - himmelblau
-    - polkit
