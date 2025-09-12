@@ -1,6 +1,7 @@
 include:
   - desktop.gdm3.service
-  - desktop.gdm3.config
 
 gdm3:
-  pkg.installed
+  pkg.purged:
+    - require:
+      - service: disable_gdm
