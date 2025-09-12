@@ -1,6 +1,4 @@
-enable_lightdm:
+disable_gdm:
   cmd.run:
-    - name: systemctl enable gdm3
-    - unless: systemctl is-enabled gdm3
-    - require:
-      - pkg: gdm3
+    - name: systemctl disable gdm3
+    - onlyif: systemctl is-enabled gdm3
