@@ -64,8 +64,6 @@ d-i preseed/late_command string \
   in-target sh -c 'printf "file_client: local\nfile_roots:\n  base:\n    - /srv/salt/states\n" > /etc/salt/minion.d/masterless.conf'; \
   in-target mkdir -p /srv/salt/states; \
   in-target git clone https://github.com/UTCSheffield/student-laptops-salt.git /srv/salt/states || true; \
-  in-target sh -c "echo '*/5 * * * * root cd /srv/salt/states && git reset --hard && git pull -q --rebase && salt-call --local state.highstate' > /etc/cron.d/salt-states-sync"; \
-  in-target chmod 644 /etc/cron.d/salt-states-sync /etc/cron.d/salt-highstate; \
   in-target salt-call --local state.highstate --state-verbose=false
 
 ## Finish
