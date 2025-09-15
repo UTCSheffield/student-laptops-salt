@@ -1,4 +1,4 @@
 include:
-  - desktop.cinnamon
+  - desktop.kde
   - desktop.gdm3
   - desktop.gnome.uninstall
