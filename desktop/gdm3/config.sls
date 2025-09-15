@@ -16,4 +16,3 @@ update-dconf-gdm:
     - onlyif: test -n "$(find /etc/gdm3/greeter.dconf-defaults -mmin -2)"
     - require:
       - file: /etc/gdm3/greeter.dconf-defaults
-      - file: /etc/gdm3/custom.conf
