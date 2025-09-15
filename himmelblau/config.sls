@@ -3,6 +3,7 @@
     - contents: |
         [global]
         domains = utcsheffield.org.uk
+        entra_id_password_prompt = Enter your school password
         enable_hello = false
         enable_sfa_fallback = true
         enable_experimental_passwordless_fido = false
