@@ -1,3 +1,12 @@
+/usr/share/applications/o365-apps.desktop:
+  file.absent
+
+/usr/share/applications/o365-onedrive.desktop:
+  file.absent
+
+/usr/share/applications/o365-sharepoint.desktop:
+  file.absent
+
 /etc/himmelblau/himmelblau.conf:
   file.managed:
     - contents: |
