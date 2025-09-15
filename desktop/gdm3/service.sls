@@ -1,4 +1,4 @@
-disable_gdm:
+enable_gdm:
   cmd.run:
-    - name: systemctl disable gdm3
-    - onlyif: systemctl is-enabled gdm3
+    - name: systemctl enable gdm3
+    - unless: systemctl is-enabled gdm3
