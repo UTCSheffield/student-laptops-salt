@@ -7,6 +7,19 @@
 /usr/share/applications/o365-sharepoint.desktop:
   file.absent
 
+{%- set apps = salt['file.readdir']('/usr/share/applications') %}
+{%- for app in apps if app.startswith('o365-') and app.endswith('.desktop') %}
+
+copy_{{ app }}_to_skel:
+  file.copy:
+    - name: /etc/skel/Desktop/{{ app }}
+    - source: /usr/share/applications/{{ app }}
+    - user: root
+    - group: root
+    - mode: '0644'
+
+{%- endfor %}
+
 /etc/himmelblau/himmelblau.conf:
   file.managed:
     - contents: |
