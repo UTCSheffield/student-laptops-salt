@@ -21,6 +21,22 @@ copy_{{ app }}_to_skel:
 
 {%- endfor %}
 
+{%- set user_homes = salt['file.find']('/home', type='d', maxdepth=1) %}
+{%- for user_home in user_homes %}
+{%- set username = user_home.split('/')[-1] %}
+
+{%- for app in o365_apps %}
+copy_{{ username }}_{{ app }}:
+  file.copy:
+    - name: {{ user_home }}/Desktop/{{ app }}
+    - source: /usr/share/applications/{{ app }}
+    - user: {{ username }}
+    - group: {{ username }}
+    - mode: '0644'
+    - makedirs: True
+{%- endfor %}
+{%- endfor %}
+
 /etc/himmelblau/himmelblau.conf:
   file.managed:
     - contents: |
