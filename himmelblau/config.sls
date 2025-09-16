@@ -17,6 +17,7 @@ copy_{{ app }}_to_skel:
     - user: root
     - group: root
     - mode: '0644'
+    - makedirs: True
 
 {%- endfor %}
 
