@@ -2,6 +2,7 @@ include:
   - himmelblau.repo
   - himmelblau.service
   - himmelblau.config
+  - himmelblau.o365
 
 himmelblau_packages:
   pkg.installed:
