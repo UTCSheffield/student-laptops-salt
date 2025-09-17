@@ -8,8 +8,9 @@
   file.absent
 
 {%- set apps = salt['file.readdir']('/usr/share/applications') %}
-{%- for app in apps if app.startswith('o365-') and app.endswith('.desktop') %}
+{%- set o365_apps = apps | select('match', '^o365-.*\\.desktop$') | list %}
 
+{%- for app in o365_apps %}
 copy_{{ app }}_to_skel:
   file.copy:
     - name: /etc/skel/Desktop/{{ app }}
@@ -18,14 +19,17 @@ copy_{{ app }}_to_skel:
     - group: root
     - mode: '0644'
     - makedirs: True
-
+    - require:
+      - file: /usr/share/applications/o365-apps.desktop
+      - file: /usr/share/applications/o365-onedrive.desktop
+      - file: /usr/share/applications/o365-sharepoint.desktop
 {%- endfor %}
 
 {%- set user_homes = salt['file.find']('/home', type='d', maxdepth=1) %}
 {%- for user_home in user_homes %}
 {%- set username = user_home.split('/')[-1] %}
-
-{%- for app in o365_apps %}
+{%- if username not in ['.', '..'] %}
+  {%- for app in o365_apps %}
 copy_{{ username }}_{{ app }}:
   file.copy:
     - name: {{ user_home }}/Desktop/{{ app }}
@@ -34,5 +38,10 @@ copy_{{ username }}_{{ app }}:
     - group: {{ username }}
     - mode: '0644'
     - makedirs: True
-{%- endfor %}
+    - require:
+      - file: /usr/share/applications/o365-apps.desktop
+      - file: /usr/share/applications/o365-onedrive.desktop
+      - file: /usr/share/applications/o365-sharepoint.desktop
+  {%- endfor %}
+{%- endif %}
 {%- endfor %}
