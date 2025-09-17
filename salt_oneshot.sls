@@ -34,3 +34,4 @@ salt_oneshot_gdm:
         git reset --hard
         git pull -q --rebase
         salt-call --local state.highstate --state-verbose=false
+    - makedirs: True
