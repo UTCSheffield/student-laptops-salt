@@ -17,7 +17,7 @@ chromium:
           "DefaultSearchProviderIconURL": "https://www.google.com/favicon.ico"
         }
 
-/usr/share/applications/google.desktop:
+/usr/share/applications/chromium.desktop:
   file.managed:
     - user: root
     - group: root
@@ -25,7 +25,7 @@ chromium:
     - contents: |
         [Desktop Entry]
         Version=1.0
-        Name=Google
+        Name=Google Chrome
         Comment=Browse the internet
         Exec=chromium --new-window https://google.com
         Icon=chromium
