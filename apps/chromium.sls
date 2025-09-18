@@ -33,6 +33,3 @@ chromium:
         Type=Application
         Categories=Network;WebBrowser;
         StartupNotify=true
-
-/usr/share/applications/chromium.desktop:
-  file.absent
