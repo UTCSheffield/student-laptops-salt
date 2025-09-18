@@ -1,8 +1,6 @@
 kde-plasma-desktop:
   pkg.installed
 
-# kde_clear_launchers.sls
-
 kde_skeldir:
   file.directory:
     - name: /etc/skel/.config
