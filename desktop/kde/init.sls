@@ -1,14 +1,6 @@
 kde-plasma-desktop:
   pkg.installed
 
-kde_skeldir:
-  file.directory:
-    - name: /etc/skel/.config
-    - makedirs: True
-    - user: root
-    - group: root
-    - mode: '0755'
-
 /etc/skel/.config/plasma-org.kde.plasma.desktop-appletsrc:
   file.managed:
     - makedirs: True
