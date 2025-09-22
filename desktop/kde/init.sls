@@ -128,3 +128,29 @@ kde-plasma-desktop:
         [ScreenMapping]
         itemsOnDisabledScreens=
         screenMapping=desktop:/o365-word.desktop,0,ebc04315-c7bc-4b72-ab92-139f65ae8f18,desktop:/o365-teams.desktop,0,ebc04315-c7bc-4b72-ab92-139f65ae8f18,desktop:/o365-outlook.desktop,0,ebc04315-c7bc-4b72-ab92-139f65ae8f18,desktop:/o365-onenote.desktop,0,ebc04315-c7bc-4b72-ab92-139f65ae8f18,desktop:/o365-onedrive.desktop,0,ebc04315-c7bc-4b72-ab92-139f65ae8f18,desktop:/o365-excel.desktop,0,ebc04315-c7bc-4b72-ab92-139f65ae8f18,desktop:/o365-powerpoint.desktop,0,ebc04315-c7bc-4b72-ab92-139f65ae8f18
+
+/etc/skel/.config/kdeglobals:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: '0644'
+    - makedirs: True
+    - contents: |
+        [General]
+        ColorScheme=Breeze
+        Name=Breeze
+        XftDPI=144
+
+        [KDE]
+        LookAndFeelPackage=org.kde.breeze.desktop
+
+        [KScreen]
+        ScaleFactor=1.5
+
+        [WM]
+        activeBackground=#3daee9
+        activeBlend=#eff0f1
+        activeForeground=#fcfcfc
+        inactiveBackground=#d3dae3
+        inactiveBlend=#eff0f1
+        inactiveForeground=#7f8c8d
