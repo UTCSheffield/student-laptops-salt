@@ -1,0 +1,17 @@
+name: Salt Linter
+
+on:
+  pull_request:
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    name: Salt Lint Action Demo
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Run salt-lint
+        uses: roaldnefs/salt-lint-action@0.0.3
