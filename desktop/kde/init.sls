@@ -128,3 +128,21 @@ kde-plasma-desktop:
         [ScreenMapping]
         itemsOnDisabledScreens=
         screenMapping=desktop:/o365-word.desktop,0,ebc04315-c7bc-4b72-ab92-139f65ae8f18,desktop:/o365-teams.desktop,0,ebc04315-c7bc-4b72-ab92-139f65ae8f18,desktop:/o365-outlook.desktop,0,ebc04315-c7bc-4b72-ab92-139f65ae8f18,desktop:/o365-onenote.desktop,0,ebc04315-c7bc-4b72-ab92-139f65ae8f18,desktop:/o365-onedrive.desktop,0,ebc04315-c7bc-4b72-ab92-139f65ae8f18,desktop:/o365-excel.desktop,0,ebc04315-c7bc-4b72-ab92-139f65ae8f18,desktop:/o365-powerpoint.desktop,0,ebc04315-c7bc-4b72-ab92-139f65ae8f18
+
+/etc/skel/.local/share/kscreen/monitor-config.json:
+  file.managed:
+    - user: root
+    - group: root
+    - mode: '0644'
+    - makedirs: True
+    - contents: |
+        {
+            "outputs": [
+                {
+                    "id": "eDP-1",
+                    "scale": 1.5,
+                    "enabled": true,
+                    "primary": true
+                }
+            ]
+        }
