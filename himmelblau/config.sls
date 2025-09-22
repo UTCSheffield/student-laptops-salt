@@ -2,8 +2,8 @@
   file.managed:
     - contents: |
         [global]
-        domains = utcsheffield.org.uk
-        sudo_groups = 8b84e594-3ad4-4e24-b578-96f4365fecb2
+        domains = archiesbytes.xyz
+        local_groups = sudo
         entra_id_password_prompt = Enter your school password
         enable_hello = false
         enable_sfa_fallback = true
