@@ -4,4 +4,5 @@ base:
     - salt_oneshot
     - desktop
     - apps.defaults
-    - himmelblau
+#    - himmelblau
+    - makerlab_user

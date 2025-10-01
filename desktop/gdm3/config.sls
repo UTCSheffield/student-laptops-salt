@@ -2,7 +2,7 @@
   file.managed:
     - contents: |
         [org/gnome/login-screen]
-        disable-user-list=true
+        #disable-user-list=true
     - user: root
     - group: root
     - mode: '0644'
