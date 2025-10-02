@@ -10,7 +10,7 @@ olpstrudel-icon:
 
 olpstrudel:
   file.managed:
-    - name: /usr/share/applications/olpflok.desktop
+    - name: /usr/share/applications/olpstrudel.desktop
     - mode: '0644'
     - user: root
     - group: root
