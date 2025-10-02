@@ -4,3 +4,4 @@ include:
     - apps.remove_libreoffice
     - apps.firefox_esr
     - apps.openscad
+    - apps.programming
