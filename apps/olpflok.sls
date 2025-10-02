@@ -23,6 +23,5 @@ olpflok:
         Icon=/usr/share/icons/flok.svg
         Terminal=false
         Type=Application
-        Categories=Network;WebBrowser;
     - require:
       - file: olpflok-icon
