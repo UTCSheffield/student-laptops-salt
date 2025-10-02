@@ -1,0 +1,2 @@
+openscad:
+  pkg.installed
