@@ -1,6 +1,6 @@
 include:
-    - apps.chromium
     - apps.curl
     - apps.konsole
     - apps.remove_libreoffice
-    - apps.remove_firefox_esr
+    - apps.firefox_esr
+    - apps.openscad
