@@ -1,2 +1,0 @@
-firefox-esr:
-  pkg.purged
