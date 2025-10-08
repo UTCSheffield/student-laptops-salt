@@ -1,3 +1,15 @@
+/etc/gdm3/custom.conf:
+  file.managed:
+    - contents: |
+        [daemon]
+        WaylandEnable=false
+    - user: root
+    - group: root
+    - mode: '0644'
+    - require:
+      - pkg: gdm3
+    - makedirs: True
+
 /etc/gdm3/greeter.dconf-defaults:
   file.managed:
     - contents: |
